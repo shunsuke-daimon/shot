@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="index-title">Tweet一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blogs.each do |blog| %>
+      <tr class="row">
+        <td class="col-xs-9 col-sm-9 col-md-9 alert alert-info" role="alert"><%= blog.content %></td>
+        <td class="col-xs-1 col-sm-1 col-md-1 btn btn-primary btn-lg" role="button"><%= link_to '確認する', blog_path(blog.id) %></td>
+        <td class="col-xs-1 col-sm-1 col-md-1 btn btn-primary btn-lg" role="button"><%= link_to '編集する', edit_blog_path(blog), data: { confirm: '編集してよろしいですか?' } %></td>
+        <td class="col-xs-1 col-sm-1 col-md-1 btn btn-primary btn-lg" role="button"><%= link_to '削除する', blog, method: :delete, data: { confirm: '削除してよろしいですか?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h1 class="btn btn-primary" role="button"><%= link_to '新たにTweetする', new_blog_path %></h1>
+<h1 class="btn btn-primary" role="button"><%= link_to 'Topへ', '/' %></h1>

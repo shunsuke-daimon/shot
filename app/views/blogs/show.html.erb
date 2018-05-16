@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tweet内容</h1>
+<p class="alert alert-info" role="alert">Tweet内容:<%= @blog.content %></p>
+
+<h1 class="btn btn-primary" role="button"><%= link_to '編集する', edit_blog_path(@blog) %></h1>
+<h1 class="btn btn-primary" role="button"><%= link_to '一覧にもどる', blogs_path %></h1>
